@@ -1,0 +1,46 @@
+table.preview {
+	width: 100%;
+	border: 0px;
+	padding: 0px;
+	margin: 0px;
+}
+
+table.preview td {
+	padding: 2px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+}
+
+table.preview td.seperator {
+	padding-top: 0px;
+	padding-bottom: 0px;
+	line-height: 0px;	
+}
+
+table.preview td.label {
+	width: 150px;
+	white-space: nowrap;
+}
+
+table.preview td.value {
+	font-weight: bold;
+}
+
+table.form td.button button.button {
+	display: inline;
+	border-width: 0px;
+	font-size: 12px;
+	font-family: 'Trebuchet MS', arial;
+	color: #FFFFFF;
+	font-weight: bold;
+	cursor: pointer;
+	background: url('<?php echo $this->baseHref() . '/Theme/Image/button_glass.png' ?>') center center repeat-x #4DB800;
+	padding: 3px 10px 3px 10px;
+	-moz-border-radius: 3px 3px 3px 3px;
+	-webkit-border-radius: 3px 3px 3px 3px;
+	border-radius: 3px 3px 3px 3px;
+}
+
+table.form td.button span.button {
+	margin-right: 5px;
+}

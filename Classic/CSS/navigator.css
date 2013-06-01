@@ -1,0 +1,101 @@
+.pad1 {
+	width: 25px;
+	height: 25px;
+	background: white;
+	display: inline;
+	float: left;
+	margin: 3px 3px 0 3px;
+}
+
+.pad2 {
+	width: 25px;	
+	height: 25px;
+	background: white;
+	display: inline;
+	float: left;
+	margin: 3px 3px 0 0;
+}
+
+#navigator {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+#navigator ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+#navigator li {
+	float: left;
+	background: #dcc;
+	margin: 3px 3px 0 0;
+	position: relative;
+}
+
+#navigator li.sub {
+	background: url('<?php echo $this->baseHref() . '/Theme/Image/navigator/arrow.gif' ?>') no-repeat 100% center #baa;
+}
+
+#navigator li.sub ul li.sub {
+	background: url('<?php echo $this->baseHref() . '/Theme/Image/navigator/right.gif' ?>') no-repeat 100% center #baa;
+}
+
+/* for IE5.5 and IE6 only */
+#navigator table {
+	border-collapse: collapse;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 80;
+	font-size: 1em;
+}
+
+#navigator li a {
+	display: block;
+	color: #000;
+	height: 25px;
+	font-family: arial, sans-serif;
+	font-size: 11px;
+	line-height: 24px;
+	width: 120px;
+	text-decoration: none;
+	text-align: center;
+}
+
+#navigator :hover {
+	color: #ee0;
+	background: #988;
+}
+
+#navigator :hover>a {
+	color: #ee0;
+	background: #988;
+}
+
+#navigator ul,#navigator :hover ul ul,#navigator :hover ul :hover ul ul,#navigator :hover ul :hover ul ul.left
+	{
+	position: absolute;
+	left: -9999px;
+	width: 128px;
+}
+
+#navigator :hover ul {
+	left: 0;
+	top: 25px;
+	background: url(transparent.gif);
+} /* the background image is for IE7 */
+#navigator :hover ul :hover ul,#navigator :hover ul :hover ul :hover ul {
+	padding: 0 3px;
+	left: 120px;
+	top: -3px;
+}
+
+#navigator :hover ul :hover ul.left,#navigator :hover ul :hover ul :hover ul.left
+	{
+	padding: 0 3px;
+	left: -125px;
+	top: -3px;
+}

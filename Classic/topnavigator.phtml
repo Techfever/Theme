@@ -1,0 +1,61 @@
+<?php
+function NavigatorTree($pages, $verify) {
+	$content = null;
+	$total = count($pages);
+	$count = 1;
+	foreach ($pages as $page) {
+		if ($page->isVisible() && $verify->accept($page)) {
+			$hasChildren = $page->hasPages();
+			$href = $page->getHref();
+			if ($href == "#") {
+				$href = $_SERVER['REQUEST_URI'] . "#";
+			} elseif (substr($href, -1) == '/') {
+				$href = substr($href, 0, -1);
+			}
+			if (!$hasChildren) {
+				$content .= '<li><a href="' . $href . '">' . $page->getLabel() . '</a></li>';
+				$content .= "\n";
+			} else {
+				$content .= '<li class="sub"><a href="' . $href . '">' . $page->getLabel() . '</a>';
+				$content .= "\n";
+				$content .= '<ul' . ($total > 1 && $total == $count ? ' class="left"' : '') . '>';
+				$content .= "\n";
+				$content .= NavigatorTree($page->getPages(), $verify);
+				$content .= '</ul>';
+				$content .= "\n";
+				$content .= '</li>';
+				$content .= "\n";
+			}
+		}
+		$count++;
+	}
+	return $content;
+}
+?>
+<div class="pad1"></div>
+<ul id="navigator">
+<?php
+echo NavigatorTree($this->container, $this->navigation());
+?>
+</ul>
+<div class="pad2"></div>
+<script type="text/javascript">
+	var ua = navigator.userAgent;
+	var isMSIE = (navigator.appName == "Microsoft Internet Explorer");
+	var isMSIE5_5 = isMSIE && (ua.indexOf('MSIE 5.5') != -1);
+	var isMSIE6 = isMSIE && (ua.indexOf('MSIE 6.0') != -1);
+
+	if (isMSIE5_5 || isMSIE6) {
+		document.getElementById('navigator').innerHTML = document
+				.getElementById('navigator').innerHTML.replace(/<ul/gi,
+				"<table><tr><td><ul").replace(/<\/ul>/gi,
+				"</ul></td></tr></table></a>");
+		for (i = 0; i < document.getElementsByTagName("li").length; i++) {
+			if (document.getElementsByTagName("li").item(i).className == "sub") {
+				document.getElementsByTagName("li").item(i).innerHTML = document
+						.getElementsByTagName("li").item(i).innerHTML.replace(
+						/<\/a>/i, "");
+			}
+		}
+	}
+</script>

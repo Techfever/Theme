@@ -1,0 +1,214 @@
+table.form {
+	width: 100%;
+	border: 0px;
+	padding: 0px;
+	margin: 0px;
+}
+
+table.form td {
+	padding: 2px;
+}
+
+
+table.form tr.Hover {
+	background: #E2E2E2;
+}
+
+table.form td.label {
+	width: 150px;
+	white-space: nowrap;
+}
+
+table.form td.field {
+	width: 230px;	
+	text-wrap: none;	
+}
+
+table.form td.help {
+		
+}
+
+form td.help div.ui-widget{
+	background-color: transparent;
+}
+
+form td.help div.ui-widget div.ui-state-active{
+	padding: 0 .1em;
+	border: none;
+	background: none;
+}
+
+form td.help div.ui-state-active span.ui-icon-closethick{
+	float: left; 
+	margin-right: .3em;
+}
+
+form td.help div.ui-state-active span.ui-icon-alert{
+	float: left; 
+	margin-right: .3em;
+}
+
+table.form td.label label {
+	line-height: 22px;
+	cursor: pointer;
+}
+
+table.form td.paragraph{
+	padding: 0px;
+	margin: 0px;
+	line-height: 0px;	
+	font-weight: bold;
+	text-wrap: none;	
+}
+
+table.form td.field div.tooltip {
+	width: 230px;
+}
+
+table.form td.label label:hover {
+	color: #333333;
+}
+
+table.form td.field div.captcha {
+	width: 140px;
+}
+
+table.form td.field input {
+	font-weight: bold;
+}
+
+table.form td.field input.checkbox {
+	display: inline;
+	position: relative;
+	left: 1px;
+	top: 1px;
+	cursor: pointer;
+}
+
+table.form td.field input.radio {
+	/*
+	display: inline;
+	position: relative;
+	top: 2px;
+	left: -1px;
+	*/
+}
+
+table.form td.field input.text {
+	display: inline;
+	border: 1px solid #B8B8B8;
+	font-size: 12px;
+	font-family: 'Trebuchet MS', arial;
+	color: #333333;
+	height: 16px;
+	padding: 2px 4px 2px 4px;
+	width: 220px;
+}
+
+table.form td.field input.password {
+	display: inline;
+	border: 1px solid #B8B8B8;
+	font-size: 12px;
+	font-family: 'Trebuchet MS', arial;
+	color: #333333;
+	height: 16px;
+	padding: 2px 4px 2px 4px;
+	width: 220px;
+}
+
+table.form td.field input.captcha {
+	display: inline;
+	border: 1px solid #B8B8B8;
+	font-size: 12px;
+	font-family: 'Trebuchet MS', arial;
+	color: #333333;
+	height: 16px;
+	padding: 2px 4px 2px 4px;
+}
+
+table.form td.field input.submit, button.button {
+	display: inline;
+	border-width: 0px;
+	font-size: 12px;
+	font-family: 'Trebuchet MS', arial;
+	color: #FFFFFF;
+	font-weight: bold;
+	cursor: pointer;	
+	background: url('<?php echo $this->baseHref() . '/Theme/Image/button_glass.png' ?>') center center repeat-x
+		#4DB800;	
+	padding: 3px 10px 3px 10px;
+	-moz-border-radius: 3px 3px 3px 3px;
+	-webkit-border-radius: 3px 3px 3px 3px;
+	border-radius: 3px 3px 3px 3px;
+}
+
+
+table.form td.field span.button{
+	margin-right: 5px;
+}
+
+
+table.form td.field input.form-file {
+	display: inline;
+	height: auto;
+	font-size: 12px !important;
+}
+
+table.form td.field select {
+	display: inline;
+	border: 1px solid #B8B8B8;
+	font-size: 12px;
+	font-family: 'Trebuchet MS', arial;
+	color: #333333;
+	height: 22px;
+	padding: 2px;
+	min-width: 230px;
+	font-weight: bold;	
+}
+
+table.form td.field select.selectdate {
+	width: 45px;
+	min-width: 45px;	
+}
+
+table.form td.field select.selectmonth {
+	width: 120px;
+	min-width: 120px;	
+}
+
+table.form td.field select.selectyear {
+	width: 55px;
+	min-width: 55px;	
+}
+
+table.form td.field textarea {
+	display: inline;
+	border: 1px solid #B8B8B8;
+	font-size: 12px;
+	font-family: 'Trebuchet MS', arial;
+	color: #333333;
+	padding: 4px;
+	font-weight: bold;
+}
+
+table.form td.field span.preview {
+	font-size: 12px;
+	font-family: 'Trebuchet MS', arial;	
+	font-weight: bold;
+}
+
+table.form td.field .Focus {
+	box-shadow: 1px 1px 3px #666666;
+}
+
+table.form td.field .Required {
+	box-shadow: 1px 1px 3px Red;
+}
+
+table.form td.label span.required {
+	color: red;
+}
+
+table.form td.hidden {
+	height: 0px;
+}
